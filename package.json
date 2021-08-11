@@ -1,0 +1,22 @@
+{
+  "name": "cuemby-backend",
+  "version": "1.0.0",
+  "description": "fullstack test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "create-db": "node ./scripts/createDb.js",
+    "populate-db": "node ./scripts/populateDb.js"
+  },
+  "author": "JaimeTorres",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "knex": "^0.21.21",
+    "node-fetch": "^2.6.1",
+    "pg": "^8.7.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
