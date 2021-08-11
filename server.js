@@ -2,11 +2,14 @@ const express = require('express');
 const cors = require('cors');
 const { handleTeamSearch } = require('./controllers/team');
 const { handlePlayersSearch } = require('./controllers/players');
+const { apiKeyAuth } = require('@vpriem/express-api-key-auth');
 
 const app = express();
 //Middleware
 app.use(express.json());
 app.use(cors());
+//x-api-header verification, example: $ CUEMBY_API_KEY_1='super' node server.js
+app.use(apiKeyAuth([process.env.CUEMBY_API_KEY_1]));
 
 //Default verification
 app.get('/', (req, res) => { res.send('It is working!') });
@@ -16,4 +19,4 @@ app.post('/api/v1/team', (req, res) => { handleTeamSearch(req, res) });
 app.get('/api/v1/players', (req, res) => { handlePlayersSearch(req, res) });
 
 //Start server
-app.listen(3010, () => console.log('App is runnning on port 3010'));
+app.listen(process.env.PORT || 3010, () => console.log(`App is runnning on port ${process.env.PORT || 3010}`));
