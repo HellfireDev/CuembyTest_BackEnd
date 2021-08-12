@@ -8,8 +8,8 @@ const app = express();
 //Middleware
 app.use(express.json());
 app.use(cors());
-//x-api-header verification, example to launch server: $ CUEMBY_API_KEY_1='super' node server.js
-app.use(apiKeyAuth([process.env.CUEMBY_API_KEY_1]));
+//x-api-header verification, example to launch server: $ CUEMBY_API_KEY_1='myapikeystring' node server.js
+app.use(apiKeyAuth([process.env.CUEMBY_API_KEY_1 || 'super'])); //hardcoding an API KEY value in case it's not provided on services startup
 
 //Default verification
 app.get('/', (req, res) => { res.send('It is working!') });

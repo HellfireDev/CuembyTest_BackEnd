@@ -4,11 +4,12 @@ const { pageSize } = config;
 
 
 const handleTeamSearch = (req, res) => {
-    const { team, page } = req.body;
+    const { team, page: pageString } = req.body;
+    const page = parseInt(pageString);
     if (!!(team.trim()) && !!page) {
         db.select('name').from('players').where('team', 'ilike', `%${team}%`)
             .then(totalPlayers => {
-                db.select('name', 'position', 'nation')
+                db.select('id', 'name', 'position', 'nation')
                     .from('players').where('team', 'ilike', `%${team}%`)
                     .offset((pageSize * page) - pageSize).limit(pageSize)
                     .then(players => {
