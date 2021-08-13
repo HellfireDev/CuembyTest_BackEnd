@@ -12,4 +12,4 @@ A simple App made with Express.js and PostgreSQL.
 - scripts: It contains 2 scripts -> create a local Postgres db, and populate local db with FUT21 API data. Both are mapped to run directly using NPM scripts. 
 - server.js: Entry point of the app.
 - Dockerfile and .dockerignore: Simple configuration to generate a minimal working dockerized app.
-- **NOTE:** x-api-header verification was implemented, so the following env variable needs to be loaded and also its value sent on requests: CUEMBY_API_KEY_1
+- **NOTE:** Optional x-api-header verification was implemented.
