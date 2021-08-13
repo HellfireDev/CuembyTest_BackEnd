@@ -1,6 +1,6 @@
 # Cuemby Backend
 
-A simple App made with Express.js and PostgreSQL.
+Test App made with Express.js and PostgreSQL.
 
 ## Project Structure
 ![image](https://user-images.githubusercontent.com/52900601/129096848-623343b0-64b7-4a4a-b7f1-8064d809a8a0.png)
